@@ -5,6 +5,7 @@ class ProjectUtils {
   final String? androidLink;
   final String? iosLink;
   final String? webLink;
+  final String? githubLink;
 
   ProjectUtils({
     required this.image,
@@ -13,6 +14,7 @@ class ProjectUtils {
     this.androidLink,
     this.iosLink,
     this.webLink,
+    this.githubLink,
   });
 }
 
@@ -77,26 +79,23 @@ List<ProjectUtils> hobbyProjectUtils = [
 List<ProjectUtils> workProjectUtils = [
   ProjectUtils(
     image: 'assets/projects/w01.png',
-    title: 'English Brain Craft',
+    title: 'Remote Health Monitroing',
     subtitle:
-        'This is an English learning app for students to learn English through various methods.',
-    androidLink:
-        'https://play.google.com/store/apps/details?id=kr.co.evolcano.donotstudy',
-    iosLink:
-        "https://apps.apple.com/kr/app/%EC%98%81%EC%96%B4%EB%A8%B8%EB%A6%AC-%EA%B3%B5%EC%9E%91%EC%86%8C/id1507102714",
+        'This is a health monirtoring app which is created for getting more rectified data be the use of ML',
+    githubLink: "https://github.com/Taseen23/Health_Monitroing_System",
   ),
   ProjectUtils(
     image: 'assets/projects/w02.png',
-    title: 'Online Shop Web App',
+    title: 'Bloc E-Commerce',
     subtitle:
-        'This is a responsive online shop web application for car engine oil.',
-    webLink: 'https://www.elo.best',
+        'Focusig on state managemnt this project is inititated. For storing data Firebase is used.',
+    githubLink: "https://github.com/Taseen23/e-commerce_bloc",
   ),
   ProjectUtils(
     image: 'assets/projects/w03.jpeg',
-    title: 'Advertisement Management System',
+    title: 'Task Manager',
     subtitle:
-        'This is an Advertisement Management System to buy, sell, and manage advertisement.',
-    webLink: 'https://www.externally.unavailable.project',
+        'It is a to do task app where share preference is used to store data',
+    githubLink: "https://github.com/Taseen23/task_manager",
   ),
 ];

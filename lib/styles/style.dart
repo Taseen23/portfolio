@@ -6,7 +6,7 @@ BoxDecoration kHederDecoration = BoxDecoration(
   gradient: const LinearGradient(
     colors: [
       Colors.transparent,
-      CustomColor.bgLight1,
+      CustomColor.redlite,
     ],
   ),
   borderRadius: BorderRadius.circular(100),
