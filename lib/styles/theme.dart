@@ -8,7 +8,7 @@ ThemeData kCustomTheme = ThemeData.dark().copyWith(
   ),
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
-      backgroundColor: CustomColor.yellowPrimary,
+      backgroundColor: Color.fromARGB(255, 34, 172, 231),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(100),
       ),

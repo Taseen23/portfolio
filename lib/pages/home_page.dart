@@ -120,9 +120,9 @@ class _HomePageState extends State<HomePage> {
   }
 
   void scrollToSection(int navIndex) {
-    if (navIndex == 4) {
+    if (navIndex == 1) {
       // open a blog page
-      js.context.callMethod('open', [SnsLinks.blog]);
+      js.context.callMethod('open', [SnsLinks.github]);
       return;
     }
 
