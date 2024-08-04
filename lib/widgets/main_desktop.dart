@@ -51,8 +51,9 @@ class MainDesktop extends StatelessWidget {
           ),
           // avatar img
           Image.asset(
-            "assets/Picsart_24-04-27_21-26-12-811.png",
-            width: screenWidth / 2,
+            "assets/1722781495389.png",
+            fit: BoxFit.cover,
+            // width: screenWidth / 3.5,
           ),
         ],
       ),

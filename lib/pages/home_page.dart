@@ -123,6 +123,7 @@ class _HomePageState extends State<HomePage> {
     if (navIndex == 1) {
       // open a blog page
       js.context.callMethod('open', [SnsLinks.github]);
+
       return;
     }
 

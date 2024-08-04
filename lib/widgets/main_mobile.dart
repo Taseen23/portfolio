@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 import '../constants/colors.dart';
@@ -12,6 +14,7 @@ class MainMobile extends StatelessWidget {
     final screenWidth = screenSize.width;
 
     return Container(
+      color: Color.fromARGB(255, 175, 181, 241),
       margin: const EdgeInsets.symmetric(
         horizontal: 40.0,
         vertical: 30.0,
@@ -25,39 +28,25 @@ class MainMobile extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           // avatar img
-          ShaderMask(
-            shaderCallback: (bounds) {
-              return LinearGradient(colors: [
-                CustomColor.scaffoldBg.withOpacity(0.6),
-                CustomColor.scaffoldBg.withOpacity(0.6),
-              ]).createShader(bounds);
-            },
-            blendMode: BlendMode.srcATop,
-            child: Image.asset(
-              "assets/Picsart_24-04-27_21-26-12-811.png",
-              width: screenWidth,
-            ),
+          Image.asset(
+            "assets/1722781495389.png",
+            width: screenWidth,
           ),
           const SizedBox(height: 30),
           // intro message
-          const Text(
-            "Hi,\nI'm Taseen Alam Dehan\nA Flutter Developer",
-            style: TextStyle(
-              fontSize: 24,
-              height: 1.5,
-              fontWeight: FontWeight.bold,
-              color: CustomColor.whitePrimary,
+          Expanded(
+            child: const Text(
+              "Hi,\nI'm Taseen Alam Dehan\nA Flutter Developer",
+              style: TextStyle(
+                fontSize: 24,
+                height: 1.5,
+                fontWeight: FontWeight.bold,
+                color: Color.fromARGB(255, 8, 8, 8),
+              ),
             ),
           ),
           const SizedBox(height: 15),
           // contact btn
-          SizedBox(
-            width: 190.0,
-            child: ElevatedButton(
-              onPressed: () {},
-              child: const Text("Get in touch"),
-            ),
-          )
         ],
       ),
     );

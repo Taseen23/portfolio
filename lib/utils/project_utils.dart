@@ -20,29 +20,29 @@ List<ProjectUtils> hobbyProjectUtils = [
     image: 'assets/projects/1.jpg',
     title: 'Applications Management App',
     subtitle:
-        'This is a comprehensive English learning app for practicing and competing with each other.',
+        'This app allows applicants to apply and receive feedback from admins based on eligibility criteria.',
     projectlink: 'https://github.com/Taseen23/Applications_Managment_System',
   ),
   ProjectUtils(
     image: 'assets/projects/02.jpg',
     title: 'E-Commerce App',
     subtitle:
-        'This is a dictionary application for English learners to easily look up word definitions.',
+        'With the concept of bloc for state management this app is introduced,that concept boost the efficiency.',
     projectlink: 'https://github.com/Taseen23/e-commerce_bloc',
   ),
   ProjectUtils(
     image: 'assets/projects/03.jpg',
     title: 'Golden Hervest App',
     subtitle:
-        'This is a word memorising app to save and play your own words as quizes',
+        'This app connects farmers with nearby experts for quick farming support, helping keep crops healthy.',
     projectlink: 'https://github.com/Taseen23/Agricos_',
   ),
   ProjectUtils(
-    image: 'assets/projects/05.png',
-    title: 'Tasbeeh Counter',
+    image: 'assets/projects/05.jpg',
+    title: 'Expense Tracker',
     subtitle:
-        'This is a simple dzikr counter app for muslims with persistent storage',
-    projectlink: '',
+        'This is a simple expense tracker app, whoch enable users to track users his/her expenses ',
+    projectlink: 'https://github.com/Taseen23/tracker',
   ),
   ProjectUtils(
     image: 'assets/projects/04.jpg',

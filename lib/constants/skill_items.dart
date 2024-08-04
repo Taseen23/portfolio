@@ -27,6 +27,26 @@ const List<Map> skillItems = [
     "title": "Dart",
   },
   {
+    "img": "assets/bloc.png",
+    "title": "Bloc",
+  },
+  {
+    "img": "assets/tensorflowlite.jpg",
+    "title": "TensorFlow lite",
+  },
+  {
+    "img": "assets/rest_api.jpg",
+    "title": "Restfull API",
+  },
+  {
+    "img": "assets/logo_firebase_1920px_clr.png",
+    "title": "Firebase",
+  },
+  {
+    "img": "assets/sql_logo.jpg",
+    "title": "SQL",
+  },
+  {
     "img": "assets/html5.png",
     "title": "HTML5",
   },
@@ -35,19 +55,15 @@ const List<Map> skillItems = [
     "title": "CSS3",
   },
   {
-    "img": "assets/javascript.png",
-    "title": "JS",
+    "img": "assets/proxy_logo.png",
+    "title": "Proxy Server",
   },
   {
-    "img": "assets/hugo.png",
-    "title": "Hugo",
+    "img": "assets/Anetbeans_logo-930x834.webp",
+    "title": "Netbeans",
   },
   {
-    "img": "assets/docker.png",
-    "title": "Docker",
+    "img": "assets/Arduino_logo.png",
+    "title": "Arduno",
   },
-  {
-    "img": "assets/python.png",
-    "title": "Python",
-  }
 ];

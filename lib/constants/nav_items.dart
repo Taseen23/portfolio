@@ -5,7 +5,6 @@ List<String> navTitles = [
   "Skills",
   "Projects",
   "Contact",
-  "Blog",
 ];
 
 List<IconData> navIcons = [
@@ -13,5 +12,4 @@ List<IconData> navIcons = [
   Icons.handyman_outlined,
   Icons.apps,
   Icons.quick_contacts_mail,
-  Icons.web,
 ];

@@ -2,12 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:my_portfolio/constants/size.dart';
 import 'package:my_portfolio/constants/sns_links.dart';
 
+import '../Services/authenticate.dart';
 import '../constants/colors.dart';
 import 'custom_text_field.dart';
 import 'dart:js' as js;
 
 class ContactSection extends StatelessWidget {
-  const ContactSection({super.key});
+  ContactSection({super.key});
+  final TextEditingController _namecontroller = TextEditingController();
+  final TextEditingController _emailcontroller = TextEditingController();
+  final TextEditingController _massagecontroller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -50,6 +54,7 @@ class ContactSection extends StatelessWidget {
               maxWidth: 700,
             ),
             child: CustomTextField(
+              controller: _massagecontroller,
               hintText: "Your message",
               maxLines: 16,
             ),
@@ -63,7 +68,22 @@ class ContactSection extends StatelessWidget {
             child: SizedBox(
               width: double.maxFinite,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  setusers(_namecontroller.text, _emailcontroller.text,
+                      _massagecontroller.text);
+                  showDialog(
+                      context: context,
+                      builder: (ctx) => AlertDialog(
+                            content: Text("Thanks for your response "),
+                            actions: [
+                              TextButton(
+                                  onPressed: () {
+                                    Navigator.pop(ctx);
+                                  },
+                                  child: Text("OK"))
+                            ],
+                          ));
+                },
                 child: const Text("Get in touch"),
               ),
             ),
@@ -142,6 +162,7 @@ class ContactSection extends StatelessWidget {
         // name
         Flexible(
           child: CustomTextField(
+            controller: _namecontroller,
             hintText: "Your name",
           ),
         ),
@@ -149,6 +170,7 @@ class ContactSection extends StatelessWidget {
         // email
         Flexible(
           child: CustomTextField(
+            controller: _emailcontroller,
             hintText: "Your email",
           ),
         ),
