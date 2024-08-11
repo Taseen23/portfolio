@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../constants/colors.dart';
 import '../utils/project_utils.dart';
@@ -10,7 +11,9 @@ class ProjectsSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
+
     return Container(
+      color: Color.fromARGB(255, 137, 141, 230),
       width: screenWidth,
       padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
       child: Column(
@@ -33,8 +36,11 @@ class ProjectsSection extends StatelessWidget {
               runSpacing: 25,
               children: [
                 for (int i = 0; i < hobbyProjectUtils.length; i++)
-                  ProjectCardWidget(
-                    project: hobbyProjectUtils[i],
+                  InkWell(
+                    onTap: () => hobbyProjectUtils[i].ontap,
+                    child: ProjectCardWidget(
+                      project: hobbyProjectUtils[i],
+                    ),
                   ),
               ],
             ),

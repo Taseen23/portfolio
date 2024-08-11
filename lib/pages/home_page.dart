@@ -95,7 +95,7 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               ),
-              const SizedBox(height: 30),
+              //const SizedBox(height: 30),
 
               // PROJECTS
               ProjectsSection(
@@ -120,12 +120,12 @@ class _HomePageState extends State<HomePage> {
   }
 
   void scrollToSection(int navIndex) {
-    if (navIndex == 1) {
-      // open a blog page
-      js.context.callMethod('open', [SnsLinks.github]);
+    // if (navIndex == 1) {
+    //   // open a blog page
+    //   js.context.callMethod('open', [SnsLinks.github]);
 
-      return;
-    }
+    //   return;
+    // }
 
     final key = navbarKeys[navIndex];
     Scrollable.ensureVisible(
