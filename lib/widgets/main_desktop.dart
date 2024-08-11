@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../constants/colors.dart';
+import 'contact_section.dart';
 
 class MainDesktop extends StatelessWidget {
   const MainDesktop({super.key});
@@ -40,7 +41,11 @@ class MainDesktop extends StatelessWidget {
               SizedBox(
                 width: 250.0,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    // Navigator.push(context, MaterialPageRoute(builder: (ctx) {
+                    //   return ContactSection();
+                    // }));
+                  },
                   child: const Text(
                     "Get in touch",
                     style: TextStyle(color: Colors.white),

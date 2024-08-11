@@ -74,7 +74,13 @@ class ContactSection extends StatelessWidget {
                   showDialog(
                       context: context,
                       builder: (ctx) => AlertDialog(
-                            content: Text("Thanks for your response "),
+                            title: Text("Massage",
+                                style: TextStyle(
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.bold,
+                                )),
+                            content: Text(
+                                "Thanks For Your Response. You Will Get Feedback Soon. "),
                             actions: [
                               TextButton(
                                   onPressed: () {
@@ -84,7 +90,10 @@ class ContactSection extends StatelessWidget {
                             ],
                           ));
                 },
-                child: const Text("Get in touch"),
+                child: const Text(
+                  "Get in touch",
+                  style: TextStyle(color: Colors.white),
+                ),
               ),
             ),
           ),

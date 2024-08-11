@@ -12,7 +12,7 @@ class Footer extends StatelessWidget {
       width: double.maxFinite,
       alignment: Alignment.center,
       child: const Text(
-        "Made by taseen alam",
+        "Made by TAD",
         style: TextStyle(
           fontWeight: FontWeight.w400,
           color: CustomColor.whiteSecondary,

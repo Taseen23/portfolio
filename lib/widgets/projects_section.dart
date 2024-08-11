@@ -21,7 +21,7 @@ class ProjectsSection extends StatelessWidget {
             style: TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,
-              color: CustomColor.whitePrimary,
+              color: Colors.black,
             ),
           ),
           const SizedBox(height: 50),
