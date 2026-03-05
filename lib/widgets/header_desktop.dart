@@ -1,9 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/widgets/site_logo.dart';
-
-import '../constants/colors.dart';
-import '../constants/nav_items.dart';
-import '../styles/style.dart';
 
 class HeaderDesktop extends StatelessWidget {
   const HeaderDesktop({
@@ -15,36 +10,88 @@ class HeaderDesktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 60.0,
+      height: 80.0,
       margin: const EdgeInsets.symmetric(
         vertical: 10.0,
-        horizontal: 20.0,
+        horizontal: 40.0,
       ),
       width: double.maxFinite,
-      decoration: kHederDecoration,
       child: Row(
         children: [
-          SiteLogo(
-            onTap: () {},
-          ),
-          const Spacer(),
-          for (int i = 0; i < navTitles.length; i++)
-            Padding(
-              padding: const EdgeInsets.only(right: 20),
-              child: TextButton(
-                onPressed: () {
-                  onNavMenuTap(i);
-                },
-                child: Text(
-                  navTitles[i],
-                  style: const TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
-                    color: CustomColor.whitePrimary,
-                  ),
-                ),
+          // Left Nav Items
+          TextButton(
+            onPressed: () => onNavMenuTap(2), // Projects/Works
+            child: const Text(
+              "WORKS",
+              style: TextStyle(
+                fontSize: 12,
+                fontWeight: FontWeight.bold,
+                letterSpacing: 1.2,
+                color: Colors.black,
               ),
             ),
+          ),
+          const SizedBox(width: 20),
+          TextButton(
+            onPressed: () => onNavMenuTap(3), // Contact
+            child: const Text(
+              "CONTACT",
+              style: TextStyle(
+                fontSize: 12,
+                fontWeight: FontWeight.bold,
+                letterSpacing: 1.2,
+                color: Colors.black,
+              ),
+            ),
+          ),
+
+          const Spacer(),
+
+          // Center Logo
+          Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const Icon(Icons.shield_outlined, size: 24, color: Colors.black),
+              const Text(
+                "BRUNO\nERDISON",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 10,
+                  fontWeight: FontWeight.bold,
+                  height: 1.1,
+                  color: Colors.black,
+                ),
+              ),
+            ],
+          ),
+
+          const Spacer(),
+
+          // Right Social Icons
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.flutter_dash, size: 18, color: Colors.black),
+            constraints: const BoxConstraints(),
+            padding: const EdgeInsets.symmetric(horizontal: 8),
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.code, size: 18, color: Colors.black),
+            constraints: const BoxConstraints(),
+            padding: const EdgeInsets.symmetric(horizontal: 8),
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.facebook, size: 18, color: Colors.black),
+            constraints: const BoxConstraints(),
+            padding: const EdgeInsets.symmetric(horizontal: 8),
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.language, size: 18, color: Colors.black),
+            constraints: const BoxConstraints(),
+            padding: const EdgeInsets.symmetric(horizontal: 8),
+          ),
         ],
       ),
     );
