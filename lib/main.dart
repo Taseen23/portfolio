@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:my_portfolio/pages/home_page.dart';
-import 'package:my_portfolio/styles/theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,11 +11,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: kCustomTheme,
-      title: 'Taseen',
-      home: const HomePage(),
+      title: 'Neural Nexus Portfolio',
+      theme: ThemeData(
+        useMaterial3: true,
+        colorSchemeSeed: const Color(0xFF00B4D8),
+      ),
+      home: HomePage(),
     );
   }
 }
