@@ -14,6 +14,9 @@ void main() {
 
     await tester.pumpWidget(const MyApp());
 
+    expect(find.text('DIGITAL SOULS'), findsOneWidget);
+    expect(find.text('QTPAY'), findsOneWidget);
+    expect(find.text('CARBO'), findsOneWidget);
     expect(find.text(MyInfo.initiateContact), findsOneWidget);
     expect(find.byTooltip('LinkedIn'), findsOneWidget);
     expect(find.byTooltip('Facebook'), findsOneWidget);
