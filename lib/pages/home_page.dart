@@ -1,13 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../controllers/home_controller.dart';
 import '../constants/myinfo.dart';
 import '../models/home_model.dart';
 
 class HomePage extends StatelessWidget {
+  static final Uri _linkedInProfileUrl = Uri.parse(
+    'https://www.linkedin.com/in/taseen23?utm_source=share_via&utm_content=profile&utm_medium=member_android',
+  );
+
+  HomePage({super.key});
+
   final HomeController controller = Get.put(HomeController());
   final GlobalKey ctaKey = GlobalKey();
+
+  Future<void> _openLinkedInProfile() async {
+    await launchUrl(
+      _linkedInProfileUrl,
+      mode: LaunchMode.externalApplication,
+    );
+  }
 
   void _scrollToCTA() {
     final context = ctaKey.currentContext;
@@ -238,7 +253,7 @@ class HomePage extends StatelessWidget {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
             decoration: BoxDecoration(
-              color: Colors.cyan.withOpacity(0.1),
+              color: Colors.cyan.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(20),
             ),
             child: Row(
@@ -311,7 +326,7 @@ class HomePage extends StatelessWidget {
         color: Colors.white,
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Colors.black.withValues(alpha: 0.05),
             blurRadius: 20,
             offset: const Offset(0, -5),
           ),
@@ -337,7 +352,7 @@ class HomePage extends StatelessWidget {
           padding: const EdgeInsets.all(8),
           decoration: BoxDecoration(
             color: isActive
-                ? const Color(0xFF00B4D8).withOpacity(0.1)
+                ? const Color(0xFF00B4D8).withValues(alpha: 0.1)
                 : Colors.transparent,
             borderRadius: BorderRadius.circular(10),
           ),
@@ -415,7 +430,10 @@ class HomePage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(
+                Wrap(
+                  spacing: 10,
+                  runSpacing: 4,
+                  crossAxisAlignment: WrapCrossAlignment.center,
                   children: [
                     Text(
                       "MERGING LOGIC",
@@ -424,7 +442,6 @@ class HomePage extends StatelessWidget {
                         fontWeight: FontWeight.w900,
                       ),
                     ),
-                    const SizedBox(width: 10),
                     Text(
                       "&",
                       style: GoogleFonts.outfit(
@@ -433,7 +450,6 @@ class HomePage extends StatelessWidget {
                         color: const Color(0xFF00B4D8),
                       ),
                     ),
-                    const SizedBox(width: 10),
                     Text(
                       "IMAGINATION",
                       style: GoogleFonts.outfit(
@@ -681,7 +697,7 @@ class HomePage extends StatelessWidget {
           ElevatedButton.icon(
             onPressed: () {},
             icon: const Icon(Icons.language),
-            label: Text(MyInfo.initiateContact),
+            label: const Text(MyInfo.initiateContact),
             style: ElevatedButton.styleFrom(
               backgroundColor: const Color(0xFF1B2430),
               foregroundColor: Colors.white,
@@ -690,6 +706,29 @@ class HomePage extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
               ),
             ),
+          ),
+          const SizedBox(height: 24),
+          Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              _socialIconButton(
+                icon: FontAwesomeIcons.linkedinIn,
+                tooltip: 'LinkedIn',
+                onPressed: _openLinkedInProfile,
+              ),
+              const SizedBox(width: 12),
+              _socialIconButton(
+                icon: FontAwesomeIcons.facebookF,
+                tooltip: 'Facebook',
+                onPressed: () {},
+              ),
+              const SizedBox(width: 12),
+              _socialIconButton(
+                icon: FontAwesomeIcons.twitter,
+                tooltip: 'Twitter',
+                onPressed: () {},
+              ),
+            ],
           ),
         ],
       ),
@@ -747,6 +786,27 @@ class HomePage extends StatelessWidget {
 
   // --- Helper Widgets ---
 
+  Widget _socialIconButton({
+    required FaIconData icon,
+    required String tooltip,
+    required VoidCallback onPressed,
+  }) {
+    return IconButton(
+      onPressed: onPressed,
+      tooltip: tooltip,
+      style: IconButton.styleFrom(
+        backgroundColor: Colors.white,
+        foregroundColor: const Color(0xFF1B2430),
+        fixedSize: const Size.square(48),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+          side: BorderSide(color: Colors.black.withValues(alpha: 0.08)),
+        ),
+      ),
+      icon: FaIcon(icon, size: 18),
+    );
+  }
+
   Widget _primaryButton(String text, {bool fullWidth = false}) {
     return Container(
       width: fullWidth ? double.infinity : null,
@@ -801,11 +861,11 @@ class HomePage extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.8),
+        color: Colors.white.withValues(alpha: 0.8),
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Colors.black.withValues(alpha: 0.05),
             blurRadius: 10,
             offset: const Offset(0, 5),
           ),
@@ -868,7 +928,7 @@ class HomePage extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: Colors.black.withOpacity(0.05)),
+        border: Border.all(color: Colors.black.withValues(alpha: 0.05)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -881,7 +941,7 @@ class HomePage extends StatelessWidget {
                   padding:
                       const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                   decoration: BoxDecoration(
-                    color: Colors.cyan.withOpacity(0.1),
+                    color: Colors.cyan.withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(5),
                   ),
                   child: Row(
@@ -931,7 +991,7 @@ class HomePage extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: Colors.black.withOpacity(0.05)),
+        border: Border.all(color: Colors.black.withValues(alpha: 0.05)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -995,7 +1055,7 @@ class HomePage extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.2),
+        color: Colors.white.withValues(alpha: 0.2),
         borderRadius: BorderRadius.circular(20),
         border: Border.all(color: Colors.white30),
       ),
